@@ -4,14 +4,14 @@ describe Post do
   let(:post) { Post.new(title: "New post!", content: "A great story" )}
 
   it "title should be automatically titleized before save" do
-    post.title.should eq "New post!"
+    expect(post.title).to eq "New post!"
     post.save
-    
-    post.title.should eq "New Post!"
+
+    expect(post.title).to eq "New Post!"
   end
 
   it "post should be unpublished by default" do
-    pending
+    expect(post.is_published).to be false
   end
 
   # a slug is an automaticaly generated url-friendly
