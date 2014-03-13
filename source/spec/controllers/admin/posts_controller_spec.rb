@@ -14,10 +14,14 @@ describe Admin::PostsController do
 
     context "#create" do
       it "creates a post with valid params" do
-        
+        expect{ 
+          Post.create(title: "I was working", content: "In the Kremlin") 
+        }.to change { Post.count }.by(1)
       end
       it "doesn't create a post when params are invalid" do
-        pending
+        expect{
+          Post.create(title:"", content:"I'm out of good titles")
+        }.to_not change{ Post.count }
       end
     end
 
