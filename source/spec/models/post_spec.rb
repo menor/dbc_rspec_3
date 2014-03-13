@@ -1,8 +1,13 @@
 require 'spec_helper'
 
 describe Post do
+  let(:post) { Post.new(title: "New post!", content: "A great story" )}
+
   it "title should be automatically titleized before save" do
-    pending
+    post.title.should eq "New post!"
+    post.save
+    
+    post.title.should eq "New Post!"
   end
 
   it "post should be unpublished by default" do
@@ -12,9 +17,6 @@ describe Post do
   # a slug is an automaticaly generated url-friendly
   # version of the title
   it "slug should be automatically generated" do
-    post = Post.new
-    post.title   = "New post!"
-    post.content = "A great story"
     post.slug.should be_nil
     post.save
 
