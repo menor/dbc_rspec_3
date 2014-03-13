@@ -1,0 +1,17 @@
+<h1>Create a new post</h1>
+
+<%= form_for @post do |t| %>
+    <ul>
+        <li>
+            <%= t.label :title %>
+            <%= t.text_field :title %>
+        </li>
+        <li>
+            <%= t.label :content %>
+            <%= t.text_area :content %>
+        </li>
+        <li>
+            <%= t.submit %>
+        </li>
+    </ul>
+<% end %>

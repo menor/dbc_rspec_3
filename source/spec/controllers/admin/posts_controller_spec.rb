@@ -14,7 +14,7 @@ describe Admin::PostsController do
 
     context "#create" do
       it "creates a post with valid params" do
-        pending
+        
       end
       it "doesn't create a post when params are invalid" do
         pending
