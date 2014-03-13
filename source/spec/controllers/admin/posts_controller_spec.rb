@@ -26,11 +26,16 @@ describe Admin::PostsController do
     end
 
     context "#edit" do
+      let (:post) { Post.new(title:"French cough syrup", content:"Doesn't taste good")}
       it "updates a post with valid params" do
-        pending
+        post.title = "Love"
+        post.content = "Will tear us apart"
+        expect( post.title ).to eq "Love"
+        expect( post.content ).to eq "Will tear us apart"
       end
       it "doesn't update a post when params are invalid" do
-        pending
+        post.title = nil
+        expect( post.title ).to eq "French cough syrup"
       end
     end
 
