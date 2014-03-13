@@ -8,7 +8,8 @@ describe Admin::PostsController do
     end
 
     it "#new" do
-      pending
+      get :new
+      expect(response.status).to eq 200
     end
 
     context "#create" do
